@@ -93,7 +93,7 @@ ViT-S/16 pretrained on ImageNet-1k
 
 **3. Test of the best models**
 
-Top-1 accuracy was calculated on the test set for the best models from each of the four categories. (p) refers to "pretrained" and -pyr refers to pyramid. None augmentation was applied for ResNet50, while Standard augmentation was used for ViT
+Top-1 accuracy was calculated on the test set for the best models from each of the four categories. (p) refers to "pretrained" and -pyr refers to pyramid. None augmentation was applied for ResNet50, while Standard augmentation was used for ViT.
 
 |Model           | Augmentation  | Scheduler     | Top-1 Acc(%) |
 |---             | --------------| ------------- | ------------ |
@@ -114,8 +114,14 @@ Top-1 accuracy and F1-score were measured on the test set.
 |ViT-S/16(p)     | F1-macro       | 0.958         | 95.8         |
 
 
-Based on the results so far, ResNet50(p)-pyr based on the F1-score and ViT-S/16(p) based on accuracy can be considered the best models for ResNet and ViT, respectively.
+## Conclusion
+- Both warm start and cosine decay were effective in ResNet and ViT models, with no clear superiority between the two.
+- Soft augmentation yielded the highest performance across all models, confirming the effectiveness of flexible cropping and label smoothing.
+- For pretrained ResNet50, fine-tuning significantly outperformed other approaches, and the pyramid structure achieved the best performance, indicating that low-resolution inputs benefit classification.
+- In ViT, interpolating small-resolution data to a higher resolution was effective.
+- Despite class imbalance, when the number of samples in the minor class is sufficiently large (500 in this case), using accuracy as a metric does not significantly impact generalization.
 
+Based on the results so far, ResNet50(p)-pyr based on the F1-score and ViT-S/16(p) based on accuracy can be considered the best models for ResNet and ViT, respectively.
 
 ---
 ## Appendix
