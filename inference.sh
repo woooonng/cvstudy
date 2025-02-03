@@ -1,0 +1,1 @@
+python scripts/inference.py configs=configs_infer.yaml
