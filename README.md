@@ -1,5 +1,5 @@
 # Applying ResNet and ViT to Low-Resolution Inputs
-This study aims to apply ResNet and ViT to a low-Resolution dataset with a resolution of 32x32, consisting of 10 classes. A total of four models were used, including ResNet50, ResNet50 pretrained on ImageNet-1k, ViT-S/16 and ViT-S/16 pretrained on ImageNet-1k. In addition, ViT-S/3(42x42) which takes 42x42 inputs was analyzed.
+This study aims to apply ResNet and ViT to a low-Resolution dataset with a resolution of 32x32, consisting of 10 classes. A total of four models were used, including ResNet50, ResNet50 pretrained on ImageNet-1k, ViT-S/16 and ViT-S/16 pretrained on ImageNet-1k. In addition, ViT-S/3(42x42) which takes 42x42 inputs was analyzed. In this study, I primarily focused on the impacts of learning rate schedules, augmentation strategies, and model architectures on performance. Additionally, I examined whether the choice of the evaluation metric influences generalization performance in the presence of class imbalance, particulary in this dataset.
 
 ----
 ## EDA
