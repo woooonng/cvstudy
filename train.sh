@@ -1,0 +1,1 @@
+python scripts/train.py configs=configs_train.yaml
