@@ -123,8 +123,17 @@ Additional supplements are provided only for ResNet50(p)-pyr based on the F1-sco
 
 **1. Top-1 error rate per class**
 
+
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/34321970-368d-473e-a03f-566737d0d7d1" width="700">
+  <img src="https://github.com/user-attachments/assets/50810f1b-7d47-47fa-9f87-d50522a0d9a5" width="700">
 </div><br>
+
+**2. Confusion Matrix**
+
+<div style="display: flex;">
+    <img src="https://github.com/user-attachments/assets/f67432c8-c7eb-415f-8b74-d5860a2b8ea6" width="45%">
+    <img src="https://github.com/user-attachments/assets/56c08545-cd79-42d2-81e5-5ce336e563c0" width="45%">
+</div>
+
 
 
