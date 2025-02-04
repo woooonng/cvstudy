@@ -12,8 +12,8 @@ The data used in this study has a resolution of 32x32 and consists of 10 classes
 The table shows the counts/ratio of each class in the train and test sets, as described in the graph above
 | Model |class 0   |class 1   |class 2   |class 3   |class 4   |class 5   |class 6   |class 7 |class 8 |class 9 | Total |
 | ------| -----    | ---------| -----    | ------   | -------- |--------  |--------  |--------|--------|--------| ------|
-| Train | 5000/0.24| 3871/0.19| 2997/0.15| 2320/0.11| 1796/0.09| 1391/0.07| 1077/0.05|834/0.04|645/0.03|500/0.02| 20431 |
-| Test  | 1000/0.1 | 1000/0.1 | 1000/0.1 | 1000/0.1 | 1000/0.1 | 1000/0.1 | 1000/0.1 |1000/0.1|1000/0.1|1000/0.1| 10000 |
+| Train | 5000(0.24)| 3871(0.19)| 2997(0.15)| 2320(0.11)| 1796(0.09)| 1391(0.07)| 1077(0.05)|834(0.04)|645(0.03)|500(0.02)| 20431 |
+| Test  | 1000(0.1)| 1000(0.1)| 1000(0.1)| 1000(0.1)| 1000(0.1)| 1000(0.1)| 1000(0.1)|1000(0.1)|1000(0.1)|1000(0.1)| 10000 |
 
 ----
 ## Models
@@ -27,10 +27,10 @@ To adapt to low-resolution dataset, the initial "conv1" in original model was re
 #### ViT-S/16 & ViT-S/16 pretrained on ImageNet-1k
 The images were resized to 224x224 using bilinear interpolation to make the low-resolution data compatible with the both models. The output dimension of the classifier was set to 10, similar to the ResNet case. To examine the impact of the image size, the experiments were conducted with ViT-S/3(42x42) which takes the inputs with 42x42 resolution. The details are provided below.
 
-| Model          | Patch size |Embedding dimension| Heads | Blocks | MLP dimension |
-| -------------- | ---------- | ----------------- | ----- | ------ | ------------- |
-| ViT-S/16       | 16x16      | 384               | 6     | 12     | 1536          |
-| ViT-S/3(42x42) | 3x3        | 216               | 6     | 12     | 432           |
+| Model          |Input size| Patch size |Embedding dimension| Heads | Blocks | MLP dimension |
+| -------------- |--------- | ---------- | ----------------- | ----- | ------ | ------------- |
+| ViT-S/16       |224x224   | 16x16      | 384               | 6     | 12     | 1536          |
+| ViT-S/3(42x42) |42x42     | 3x3        | 216               | 6     | 12     | 432           |
 ---
 ## Experiments
 ### Setting
@@ -63,11 +63,11 @@ ResNet50
 ResNet50 pretrained on ImageNet-1k
 | Type           | Augmentation          | Scheduler     |Pyramid| Top-1 Acc(%) |
 | -------------- | --------------------- | ------------- |-------| ------------ |
-|linear evaluaion| None                  | cosine decay  |x      | 73.9         |
-|linear evaluaion| None                  | cosine decay  |x      | 77.9         |
-|fine tuning     | Standard              | warm restarts |x      | 91.4         |
-|fine tuning     | Standard              | cosine decay  |o      | 92.0         |
-|fine tuning     | Softcrop              | cosine decay  |o      | 93.8         |
+|linear evaluation| None                  | cosine decay  |x      | 73.9         |
+|linear evaluation| Standard              | cosine decay  |x      | 77.9         |
+|fine tuning      | Standard              | warm restarts |x      | 91.4         |
+|fine tuning      | Standard              | cosine decay  |o      | 92.0         |
+|fine tuning      | Softcrop              | cosine decay  |o      | 93.8         |
 <br>
 
 **2. Evaluaion of ViT-S/16 & ViT-S/16 pretrained on ImageNet-1k**
